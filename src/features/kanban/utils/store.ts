@@ -10,6 +10,14 @@ const defaultCols = [
   {
     id: 'TODO' as const,
     title: 'Todo'
+  },
+  {
+    id: 'IN_PROGRESS' as const,
+    title: 'In Progress'
+  },
+  {
+    id: 'DONE' as const,
+    title: 'Done'
   }
 ] satisfies Column[];
 
@@ -32,12 +40,39 @@ const initialTasks: Task[] = [
   {
     id: 'task1',
     status: 'TODO',
-    title: 'Project initiation and planning'
+    title: 'Project initiation and planning',
+    description: 'Define project scope and create initial timeline'
   },
   {
     id: 'task2',
     status: 'TODO',
-    title: 'Gather requirements from stakeholders'
+    title: 'Gather requirements from stakeholders',
+    description:
+      'Schedule meetings with key stakeholders to collect requirements'
+  },
+  {
+    id: 'task3',
+    status: 'IN_PROGRESS',
+    title: 'Design system architecture',
+    description: 'Create technical architecture and system design documents'
+  },
+  {
+    id: 'task4',
+    status: 'IN_PROGRESS',
+    title: 'Implement user authentication',
+    description: 'Set up authentication system with proper security measures'
+  },
+  {
+    id: 'task5',
+    status: 'DONE',
+    title: 'Set up development environment',
+    description: 'Configure development tools and initial project structure'
+  },
+  {
+    id: 'task6',
+    status: 'DONE',
+    title: 'Create project repository',
+    description: 'Initialize Git repository and set up basic CI/CD pipeline'
   }
 ];
 

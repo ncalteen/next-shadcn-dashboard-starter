@@ -80,8 +80,15 @@ export function TaskCard({ task, isOverlay }: TaskCardProps) {
           Task
         </Badge>
       </CardHeader>
-      <CardContent className='px-3 pt-3 pb-6 text-left whitespace-pre-wrap'>
-        {task.title}
+      <CardContent className='px-3 pt-3 pb-6 text-left'>
+        <div className='space-y-2'>
+          <h4 className='text-sm leading-5 font-semibold'>{task.title}</h4>
+          {task.description && (
+            <p className='text-muted-foreground text-xs leading-4'>
+              {task.description}
+            </p>
+          )}
+        </div>
       </CardContent>
     </Card>
   );
