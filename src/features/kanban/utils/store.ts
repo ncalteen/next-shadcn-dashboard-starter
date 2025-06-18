@@ -10,6 +10,14 @@ const defaultCols = [
   {
     id: 'TODO' as const,
     title: 'Todo'
+  },
+  {
+    id: 'IN_PROGRESS' as const,
+    title: 'In Progress'
+  },
+  {
+    id: 'DONE' as const,
+    title: 'Done'
   }
 ] satisfies Column[];
 
@@ -26,6 +34,7 @@ export type State = {
   tasks: Task[];
   columns: Column[];
   draggedTask: string | null;
+  version?: number;
 };
 
 const initialTasks: Task[] = [
@@ -38,6 +47,21 @@ const initialTasks: Task[] = [
     id: 'task2',
     status: 'TODO',
     title: 'Gather requirements from stakeholders'
+  },
+  {
+    id: 'task3',
+    status: 'IN_PROGRESS',
+    title: 'Design system architecture'
+  },
+  {
+    id: 'task4',
+    status: 'IN_PROGRESS',
+    title: 'Implement user authentication'
+  },
+  {
+    id: 'task5',
+    status: 'DONE',
+    title: 'Set up development environment'
   }
 ];
 
@@ -58,6 +82,7 @@ export const useTaskStore = create<State & Actions>()(
       tasks: initialTasks,
       columns: defaultCols,
       draggedTask: null,
+      version: 1,
       addTask: (title: string, description?: string) =>
         set((state) => ({
           tasks: [

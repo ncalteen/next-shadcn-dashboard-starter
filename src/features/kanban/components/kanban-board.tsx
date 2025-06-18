@@ -23,30 +23,13 @@ import NewSectionDialog from './new-section-dialog';
 import { TaskCard } from './task-card';
 // import { coordinateGetter } from "./multipleContainersKeyboardPreset";
 
-const defaultCols = [
-  {
-    id: 'TODO' as const,
-    title: 'Todo'
-  },
-  {
-    id: 'IN_PROGRESS' as const,
-    title: 'In progress'
-  },
-  {
-    id: 'DONE' as const,
-    title: 'Done'
-  }
-] satisfies Column[];
-
-export type ColumnId = (typeof defaultCols)[number]['id'];
+export type ColumnId = 'TODO' | 'IN_PROGRESS' | 'DONE';
 
 export function KanbanBoard() {
   // const [columns, setColumns] = useState<Column[]>(defaultCols);
   const columns = useTaskStore((state) => state.columns);
   const setColumns = useTaskStore((state) => state.setCols);
-  const pickedUpTaskColumn = useRef<ColumnId | 'TODO' | 'IN_PROGRESS' | 'DONE'>(
-    'TODO'
-  );
+  const pickedUpTaskColumn = useRef<ColumnId>('TODO');
   const columnsId = useMemo(() => columns.map((col) => col.id), [columns]);
 
   // const [tasks, setTasks] = useState<Task[]>(initialTasks);
