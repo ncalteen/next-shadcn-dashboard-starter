@@ -10,6 +10,14 @@ const defaultCols = [
   {
     id: 'TODO' as const,
     title: 'Todo'
+  },
+  {
+    id: 'IN_PROGRESS' as const,
+    title: 'In Progress'
+  },
+  {
+    id: 'DONE' as const,
+    title: 'Done'
   }
 ] satisfies Column[];
 
@@ -32,12 +40,56 @@ const initialTasks: Task[] = [
   {
     id: 'task1',
     status: 'TODO',
-    title: 'Project initiation and planning'
+    title: 'Project initiation and planning',
+    description: 'Set up project structure and define initial requirements'
   },
   {
     id: 'task2',
     status: 'TODO',
-    title: 'Gather requirements from stakeholders'
+    title: 'Gather requirements from stakeholders',
+    description: 'Meet with stakeholders to understand business needs'
+  },
+  {
+    id: 'task3',
+    status: 'TODO',
+    title: 'Research technical solutions',
+    description: 'Evaluate different technical approaches and tools'
+  },
+  {
+    id: 'task4',
+    status: 'IN_PROGRESS',
+    title: 'Design system architecture',
+    description: 'Create high-level system design and architecture diagrams'
+  },
+  {
+    id: 'task5',
+    status: 'IN_PROGRESS',
+    title: 'Implement core functionality',
+    description: 'Develop the main features and components'
+  },
+  {
+    id: 'task6',
+    status: 'IN_PROGRESS',
+    title: 'Set up development environment',
+    description: 'Configure development tools and CI/CD pipeline'
+  },
+  {
+    id: 'task7',
+    status: 'DONE',
+    title: 'Create project repository',
+    description: 'Initialize Git repository and set up basic project structure'
+  },
+  {
+    id: 'task8',
+    status: 'DONE',
+    title: 'Define coding standards',
+    description: 'Establish code style guidelines and linting rules'
+  },
+  {
+    id: 'task9',
+    status: 'DONE',
+    title: 'Set up team communication channels',
+    description: 'Create Slack workspace and establish communication protocols'
   }
 ];
 
